@@ -59,10 +59,10 @@ class Shoes
 
     def button name, args={}, &blk
       args = basic_attributes args
-      b = Gtk::Button.new name
-      b.signal_connect "clicked", &blk if blk
-      @canvas.put b, args[:left], args[:top]
-      b.show_now
+      b = Qt::PushButton.new name, @canvas
+      #b.signal_connect "clicked", &blk if blk
+      b.move args[:left], args[:top]
+      b.show
       args[:real], args[:text], args[:app] = b, name, self
       Button.new args
     end

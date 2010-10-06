@@ -12,7 +12,7 @@ class Shoes
         attr_accessor *args.keys
       end
 
-      @width, @height = @real.size_request
+      @width, @height = 74, 22
     end
 
     attr_reader :parent
@@ -23,7 +23,7 @@ class Shoes
     end
 
     def move2 x, y
-      @app.canvas.move @real, x, y
+      @real.move x, y
       @left, @top = x, y
     end
 
